@@ -26,11 +26,14 @@ X_train, X_test, y_train, y_test = train_test_split(
     data, datasets.load_digits().target, test_size=0.5, shuffle=False
 )
 
+
+MAX_DEPTH=10
+
 ###########################
     # Train and Predict #
 ###########################
 print("\nTraining and predicting using Decision Tree Classifier.....")
-clf = DecisionTreeClassifier()
+clf = DecisionTreeClassifier(max_depth=MAX_DEPTH)
 clf.fit(X_train, y_train)
 predicted = clf.predict(X_test)
 print(
@@ -42,7 +45,7 @@ print(
     # Train and Predict #
 ###########################
 print("\nTraining and predicting using Random Forest Classifier.....")
-clf = RandomForestClassifier()
+clf = RandomForestClassifier(max_depth=MAX_DEPTH)
 clf.fit(X_train, y_train)
 predicted = clf.predict(X_test)
 print(
